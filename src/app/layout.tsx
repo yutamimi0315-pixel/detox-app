@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
+import { GoogleTagManager } from '@next/third-parties/google';
 import { Inter } from 'next/font/google';
 import './globals.css';
+
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +20,15 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
+            {process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID && (
+                <Script
+                    async
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}`}
+                    crossOrigin="anonymous"
+                    strategy="afterInteractive"
+                />
+            )}
             <body className={inter.className + " bg-black text-white antialiased"}>
                 {children}
             </body>

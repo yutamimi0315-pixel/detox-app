@@ -6,6 +6,7 @@ import { Menu } from '@/components/Menu';
 import { TimerView } from '@/components/TimerView';
 import { DailyReport } from '@/components/DailyReport';
 import { Language, translations } from '@/utils/translations';
+import { AdBanner } from '@/components/AdBanner';
 
 export default function Home() {
     const { status, sessionSeconds, dailySeconds, sessions, today, start, stop, openReport, closeReport, resetData } = useDetox();
@@ -96,7 +97,9 @@ export default function Home() {
           "余白だけあればいいのでAD SPACEという文字は消してください"
       */}
             {showControls && (
-                <div className="fixed bottom-0 w-full h-12 bg-[#0c0a09] border-t border-stone-900 z-20"></div>
+                <div className="fixed bottom-0 w-full h-[60px] bg-[#0c0a09] border-t border-stone-900 z-20 flex items-center justify-center">
+                    <AdBanner />
+                </div>
             )}
         </main>
     );
