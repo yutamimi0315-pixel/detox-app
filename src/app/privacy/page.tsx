@@ -29,19 +29,28 @@ function PrivacyContent() {
             </Link>
 
             <div className="max-w-2xl mx-auto py-12 animate-fade-in">
-                <h1 className="text-xl font-bold tracking-wider mb-8">{t.privacy.title}</h1>
+                <h1 className="text-xl font-bold tracking-wider mb-2">{t.privacy.title}</h1>
+                <p className="text-xs text-stone-500 mb-8">{t.privacy.enacted}</p>
+
                 <div className="text-sm p-0 space-y-4 text-stone-400 leading-relaxed">
                     <p>{t.privacy.intro}</p>
 
-                    <h2 className="text-base font-bold text-stone-200 mt-8 mb-2">{t.privacy.cookies.title}</h2>
-                    <p>{t.privacy.cookies.text}</p>
-
-                    <h2 className="text-base font-bold text-stone-200 mt-8 mb-2">{t.privacy.analytics.title}</h2>
-                    <p>{t.privacy.analytics.text}</p>
-
-                    <p className="text-stone-600 text-xs mt-4">
-                        {t.privacy.note}
-                    </p>
+                    {t.privacy.sections.map((section, index) => (
+                        <div key={index} className="mt-8">
+                            <h2 className="text-base font-bold text-stone-200 mb-2">{section.title}</h2>
+                            <p className="whitespace-pre-wrap">{section.text}</p>
+                            {section.link && (
+                                <a
+                                    href={section.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block mt-2 text-stone-500 hover:text-stone-300 underline underline-offset-4 break-all"
+                                >
+                                    {section.link}
+                                </a>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
