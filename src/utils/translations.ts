@@ -51,11 +51,11 @@ export const translations = {
                 },
                 {
                     title: '3. 広告の配信について',
-                    text: '当サービスでは、第三者配信事業者（Google AdSenseなど）を利用して広告を掲載する予定です。これら第三者配信事業者は、Cookieを使用することで、ユーザーが当サービスや他のウェブサイトに過去にアクセスした際の情報に基づき、適切な広告を配信します。ユーザーは、Googleの広告設定でパーソナライズ広告を無効にすることができます。また、www.aboutads.info にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にすることができます。'
+                    text: '当サービスでは、第三者配信事業者（Google AdSenseなど）を利用して広告を掲載する予定です。これら第三者配信事業者は、Cookieを使用することで、ユーザーが当サービスや他のウェブサイトに過去にアクセスした際の情報に基づき、適切な広告を配信します。ユーザーは、[Googleの広告設定](https://www.google.com/settings/ads)でパーソナライズ広告を無効にすることができます。また、[www.aboutads.info](http://www.aboutads.info) にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にすることができます。'
                 },
                 {
                     title: '4. アクセス解析ツールについて',
-                    text: '当サービスでは、サイトの利用状況を把握するためにGoogleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。Googleアナリティクスでのデータ収集・処理の仕組みについては、Googleのポリシーと規約をご覧ください。'
+                    text: '当サービスでは、サイトの利用状況を把握するためにGoogleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。この機能はCookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。[Googleアナリティクスの規約](https://marketingplatform.google.com/about/analytics/terms/jp/)や[Googleのポリシーと規約](https://policies.google.com/technologies/partner-sites?hl=ja)もご覧ください。'
                 },
                 {
                     title: '5. 免責事項',
@@ -63,8 +63,7 @@ export const translations = {
                 },
                 {
                     title: '6. お問い合わせ',
-                    text: '本ポリシーに関するお問い合わせは、以下のフォームよりお願いいたします。',
-                    link: 'https://forms.gle/NhHpkCN3mp1rdCWWA'
+                    text: '本ポリシーに関するお問い合わせは、[こちらのフォーム](https://forms.gle/NhHpkCN3mp1rdCWWA)よりお願いいたします。'
                 },
                 {
                     title: '7. プライバシーポリシーの変更',
@@ -123,11 +122,11 @@ export const translations = {
                 },
                 {
                     title: '3. Advertising',
-                    text: 'The Service plans to use third-party advertising services (such as Google AdSense) to display advertisements. These third-party vendors use cookies to serve ads based on a user\'s prior visits to this website or other websites. Users may opt out of personalized advertising by visiting Google\'s Ad Settings. Alternatively, users can opt out of a third-party vendor\'s use of cookies for personalized advertising by visiting www.aboutads.info.'
+                    text: 'The Service plans to use third-party advertising services (such as Google AdSense) to display advertisements. These third-party vendors use cookies to serve ads based on a user\'s prior visits to this website or other websites. Users may opt out of personalized advertising by visiting [Google\'s Ad Settings](https://www.google.com/settings/ads). Alternatively, users can opt out of a third-party vendor\'s use of cookies for personalized advertising by visiting [www.aboutads.info](http://www.aboutads.info).'
                 },
                 {
                     title: '4. Analytics Tools',
-                    text: 'The Service uses "Google Analytics," an access analysis tool provided by Google, to understand site usage. Google Analytics uses Cookies to collect traffic data. This traffic data is collected anonymously and does not identify individuals. You can refuse this collection by disabling Cookies in your browser settings; please check your browser settings. For more information on how Google collects and processes data, please review Google\'s policies and terms.'
+                    text: 'The Service uses "Google Analytics," an access analysis tool provided by Google, to understand site usage. Google Analytics uses Cookies to collect traffic data. This traffic data is collected anonymously and does not identify individuals. You can refuse this collection by disabling Cookies in your browser settings; please check your browser settings. For more information on how Google collects and processes data, please review [Google\'s policies and terms](https://policies.google.com/technologies/partner-sites).'
                 },
                 {
                     title: '5. Disclaimer',
@@ -135,8 +134,7 @@ export const translations = {
                 },
                 {
                     title: '6. Contact',
-                    text: 'For inquiries regarding this Policy, please use the form below.',
-                    link: 'https://forms.gle/NhHpkCN3mp1rdCWWA'
+                    text: 'For inquiries regarding this Policy, please use [this form](https://forms.gle/NhHpkCN3mp1rdCWWA).'
                 },
                 {
                     title: '7. Changes to Privacy Policy',
