@@ -1,26 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export const AdBanner = () => {
+    useEffect(() => {
+        try {
+            // @ts-ignore
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (err) {
+            console.error('AdSense error:', err);
+        }
+    }, []);
+
     return (
         <div className="w-full h-full flex items-center justify-center overflow-hidden">
-            {/* 
-              ここにGoogle AdSenseなどの広告コードを配置します。
-              例:
-              <ins className="adsbygoogle"
-                   style={{ display: 'block' }}
-                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                   data-ad-slot="XXXXXXXXXX"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script>
-                   (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-            */}
-
-            {/* 開発確認用のプレビュー表示（本番コードを入れる際は削除してください） */}
-            <div className="text-[10px] text-stone-700 tracking-widest uppercase">
-                AD SPACE
-            </div>
+            <ins className="adsbygoogle"
+                style={{ display: 'inline-block', width: '320px', height: '50px' }}
+                data-ad-client="ca-pub-3451037859686859"
+                data-ad-slot="8127730353"></ins>
         </div>
     );
 };
