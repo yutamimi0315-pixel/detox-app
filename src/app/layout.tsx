@@ -35,3 +35,4 @@ export default function RootLayout({
         </html>
     );
 }
+// Force rebuild for environment variables
