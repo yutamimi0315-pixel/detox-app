@@ -40,8 +40,8 @@ export const TimerView = ({ seconds, isRunning, onStart, onStop, lang }: TimerVi
                 onClick={isRunning ? onStop : onStart}
                 className={`px-12 py-4 text-sm tracking-[0.3em] font-light border transition-all duration-500 rounded-full
           ${isRunning
-                        ? 'border-neutral-800 text-neutral-600 hover:border-red-900 hover:text-red-500' // Minimal stop
-                        : 'border-white/30 text-white hover:bg-white hover:text-black'
+                        ? 'border-neutral-600 text-neutral-400 hover:border-red-900 hover:text-red-500' // Increased contrast for visibility
+                        : 'border-white/40 text-white hover:bg-white hover:text-black' // Slightly more visible border
                     }
         `}
             >
