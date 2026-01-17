@@ -98,7 +98,7 @@ export default function Home() {
       */}
             {showControls && (
                 <div className="fixed bottom-0 w-full h-[60px] bg-[#0c0a09] border-t border-stone-900 z-20 flex items-center justify-center">
-                    <AdBanner />
+                    {/* <AdBanner /> */}
                 </div>
             )}
         </main>

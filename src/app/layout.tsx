@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -27,7 +27,7 @@ export default function RootLayout({
                     crossOrigin="anonymous"
                 ></script>
             </head>
-            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
+            <GoogleAnalytics gaId="G-ZSK32V9LHW" />
             {/* AdSense handled in head */}
             <body className={inter.className + " bg-black text-white antialiased"}>
                 {children}
