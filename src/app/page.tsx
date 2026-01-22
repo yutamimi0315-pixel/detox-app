@@ -8,6 +8,8 @@ import { DailyReport } from '@/components/DailyReport';
 import { Language, translations } from '@/utils/translations';
 import { AdBanner } from '@/components/AdBanner';
 
+import { HomeContent } from '@/components/HomeContent';
+
 export default function Home() {
     const { status, sessionSeconds, dailySeconds, sessions, today, start, stop, openReport, closeReport, resetData } = useDetox();
     const [lang, setLang] = useState<Language>('JP');
@@ -23,7 +25,7 @@ export default function Home() {
 
     return (
         // Updated background color to warmer dark (Stone-950 equivalent approx #0c0a09)
-        <main className="relative h-screen w-full flex flex-col overflow-hidden bg-[#0c0a09] text-stone-200 font-sans">
+        <main className={`relative h-screen w-full flex flex-col bg-[#0c0a09] text-stone-200 font-sans ${status === 'idle' ? 'overflow-y-auto' : 'overflow-hidden'}`}>
 
             {/* Navigation Layer */}
             {showControls && (
@@ -40,7 +42,7 @@ export default function Home() {
             )}
 
             {/* Main Content Area */}
-            <div className="flex-1 relative z-10 p-6 flex flex-col">
+            <div className="flex-1 relative z-10 p-6 flex flex-col min-h-full">
                 {status === 'report' ? (
                     <DailyReport
                         seconds={dailySeconds}
@@ -53,7 +55,7 @@ export default function Home() {
                     <div className="flex-1 flex flex-col items-center py-8 md:py-12">
 
                         {/* Timer Section - Flexible height */}
-                        <div className="flex-1 flex items-center justify-center w-full min-h-0">
+                        <div className="flex-1 flex items-center justify-center w-full min-h-[300px]">
                             <TimerView
                                 seconds={sessionSeconds}
                                 isRunning={status === 'running'}
@@ -65,30 +67,33 @@ export default function Home() {
 
                         {/* Timeline / Log / Report Button - Fixed at bottom of flow */}
                         {status === 'idle' && (
-                            <div className="w-full max-w-xs flex flex-col items-center space-y-6 pt-8 animate-fade-in z-20 shrink-0">
+                            <div className="w-full flex flex-col items-center animate-fade-in z-20 shrink-0">
+                                <div className="max-w-xs w-full flex flex-col items-center space-y-6">
+                                    {/* View Report Button */}
+                                    <button
+                                        onClick={openReport}
+                                        className="px-8 py-3 border border-stone-800 rounded-full text-xs tracking-widest text-stone-400 hover:border-stone-600 hover:text-stone-200 transition-colors"
+                                    >
+                                        {t.timer.openReport}
+                                    </button>
 
-                                {/* View Report Button */}
-                                <button
-                                    onClick={openReport}
-                                    className="px-8 py-3 border border-stone-800 rounded-full text-xs tracking-widest text-stone-400 hover:border-stone-600 hover:text-stone-200 transition-colors"
-                                >
-                                    {t.timer.openReport}
-                                </button>
+                                    {/* Session List */}
+                                    {sessions.length > 0 && (
+                                        <div className="w-full space-y-2 max-h-32 overflow-y-auto pr-2 custom-scrollbar">
+                                            {sessions.slice().reverse().map((s, i) => (
+                                                <div key={i} className="flex justify-between text-[10px] tracking-wider text-stone-600 border-b border-stone-900 pb-2">
+                                                    <span>{formatTime(s.timestamp)}</span>
+                                                    <span>{Math.floor(s.duration / 60)} MIN</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
 
-                                {/* Session List */}
-                                {sessions.length > 0 && (
-                                    <div className="w-full space-y-2 max-h-32 overflow-y-auto pr-2 custom-scrollbar">
-                                        {sessions.slice().reverse().map((s, i) => (
-                                            <div key={i} className="flex justify-between text-[10px] tracking-wider text-stone-600 border-b border-stone-900 pb-2">
-                                                <span>{formatTime(s.timestamp)}</span>
-                                                <span>{Math.floor(s.duration / 60)} MIN</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
+                                {/* AdSense Content Section - Only visible when idle */}
+                                <HomeContent lang={lang} />
                             </div>
                         )}
-
                     </div>
                 )}
             </div>
@@ -97,7 +102,7 @@ export default function Home() {
           "余白だけあればいいのでAD SPACEという文字は消してください"
       */}
             {showControls && (
-                <div className="fixed bottom-0 w-full h-[60px] bg-[#0c0a09] border-t border-stone-900 z-20 flex items-center justify-center">
+                <div className="fixed bottom-0 w-full h-[60px] pointer-events-none z-20 flex items-center justify-center">
                     {/* <AdBanner /> */}
                 </div>
             )}
